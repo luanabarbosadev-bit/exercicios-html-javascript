@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 5</title>
+</head>
+<body>
+    <script>
+        var compra = parseFloat(prompt("Digite o valor da compra: "));
+var pagamento = prompt("Digite a forma de pagamento (dinheiro, cartão de débito ou pix): ").toLowerCase();
+
+var percentualDesconto = 0;
+
+if (pagamento === "dinheiro" || pagamento === "pix") {
+    percentualDesconto = 0.10; 
+} else if (pagamento === "cartão de débito" && compra >= 500) {
+    percentualDesconto = 0.05; 
+}
+
+
+var valorDesconto = compra * percentualDesconto;
+var valorTotal = compra - valorDesconto;
+
+
+alert(
+    "Valor original: R$ " + compra.toFixed(2) + "\n" +
+    "Desconto aplicado: R$ " + valorDesconto.toFixed(2) + "\n" +
+    "Valor total a pagar: R$ " + valorTotal.toFixed(2)
+);
+    </script>
+</body>
+</html>
